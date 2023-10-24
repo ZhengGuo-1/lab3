@@ -2,12 +2,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 interface StringChecker { boolean checkString(String s); }
+// class Plus implements StringChecker{
+//   boolean checkString(String s){
+//         if (s.length()>5){
+//           return true;
+//         }
+//         return false;
+//       }
+// }
 
-class ListExamples {
-
+class ListExamples implements StringChecker{
   // Returns a new list that has all the elements of the input list for which
   // the StringChecker returns true, and not the elements that return false, in
   // the same order they appeared in the input list;
+  public boolean checkString(String s){
+        if (s.length()>5){
+          return true;
+        }
+        return false;
+      }
+
   static List<String> filter(List<String> list, StringChecker sc) {
     List<String> result = new ArrayList<>();
     for(String s: list) {
